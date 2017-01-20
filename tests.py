@@ -8,6 +8,7 @@ class TestKarateChop(unittest.TestCase):
 
 	def test_sample(self):
 		self.assertEqual(-1, self.karate.chop(4, [1,2,3]))
+		self.assertEqual(2, self.karate.chop(3, [1,2,3,4]))
 		
 
 if __name__ == '__main__':
