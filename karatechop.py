@@ -4,21 +4,25 @@ class Karate:
 
 	def chop(self, toFind, array):
 
-		arrayLeftBoundary, arrayRightBoundary, arrayMiddle = 0, len(array)-1, len(array)/2
-		
-		while(arrayLeftBoundary < arrayRightBoundary):
-			if toFind < array[arrayMiddle]:
-				arrayRightBoundary = arrayRightBoundary - arrayMiddle
-				arrayMiddle = (arrayLeftBoundary + arrayRightBoundary)/2						
-			if array[arrayMiddle] < toFind:
-				arrayLeftBoundary = arrayLeftBoundary + arrayMiddle
-				arrayMiddle = (arrayLeftBoundary + arrayRightBoundary)/2						
-			if array[arrayMiddle] == toFind:
-				return arrayMiddle
+		if len(array)<=0:
+			 return -1
 
-		if array[arrayMiddle] == toFind:
-			return arrayMiddle
+		left = 0
+		right = len(array)-1
+		middle = (left + right) / 2
+	
+		while left < right:	
+			if(array[middle] is toFind):
+				return middle
+			
+			if(array[middle] < toFind):
+				left = middle + 1
+				middle = (left + right) / 2
+
+			if(array[middle] > toFind):
+				right = middle - 1
+				middle = (left + right) / 2
+
+		if(array[middle] is toFind):
+			return middle
 		return -1
-
-
-
