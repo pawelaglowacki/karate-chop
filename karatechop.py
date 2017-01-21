@@ -11,7 +11,7 @@ class Karate:
 		right = len(array)-1
 		middle = (left + right) / 2
 	
-		while left < right:	
+		while left <= right:	
 			if(array[middle] is toFind):
 				return middle
 			
@@ -23,6 +23,4 @@ class Karate:
 				right = middle - 1
 				middle = (left + right) / 2
 
-		if(array[middle] is toFind):
-			return middle
 		return -1
